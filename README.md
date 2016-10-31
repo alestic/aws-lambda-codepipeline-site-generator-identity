@@ -41,7 +41,7 @@ CloudFormation template, specify:
 - **GeneratorLambdaFunctionS3Bucket** - The S3 bucket containing this
   AWS Lambda function ZIP file. E.g., "run.alestic.com"
 
-- *GeneratorLambdaFunctionS3Key** - The S3 key containing this AWS
+- **GeneratorLambdaFunctionS3Key** - The S3 key containing this AWS
   Lambda function ZIP file.  E.g.,
   "lambda/aws-lambda-codepipeline-site-generator-identity.zip"
 
