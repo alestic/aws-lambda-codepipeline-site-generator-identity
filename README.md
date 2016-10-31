@@ -35,4 +35,20 @@ This identity function plugin is still useful in a couple ways:
    desire. Then specify that new AWS Lambda function as the generator
    plugin when creating a new stack.
 
+When passing parameters to the AWS Git-backed static website
+CloudFormation template, specify:
+
+- *GeneratorLambdaFunctionS3Bucket* - The S3 bucket containing this
+  AWS Lambda function ZIP file. E.g., "run.alestic.com"
+
+- *GeneratorLambdaFunctionS3Key* - The S3 key containing this AWS
+  Lambda function ZIP file.  E.g.,
+  "lambda/aws-lambda-codepipeline-site-generator-identity.zip"
+
+- *GeneratorLambdaFunctionRuntime* - "python2.7"
+
+- *GeneratorLambdaFunctionHandler* - "index.handler"
+
+- *GeneratorLambdaFunctionUserParameters* - "unused"
+
 [stack]: https://github.com/alestic/aws-git-backed-static-website
