@@ -43,7 +43,7 @@ CloudFormation template, specify:
 
 - **GeneratorLambdaFunctionS3Key** - The S3 key containing this AWS
   Lambda function ZIP file.  E.g.,
-  "lambda/aws-lambda-codepipeline-site-generator-identity.zip"
+  "lambda/aws-lambda-site-generator-identity.zip"
 
 - **GeneratorLambdaFunctionRuntime** - "python2.7"
 
