@@ -61,6 +61,8 @@ def upload_site(site_dir, s3, to_bucket, to_key):
         s3.upload_file(site_zip_file, to_bucket, to_key)
 
 def handler(event, context):
+    source_dir = None
+    site_dir = None
     try:
         (job_id, s3, from_bucket, from_key, from_revision,
          to_bucket, to_key, user_parameters) = setup(event)
@@ -88,8 +90,10 @@ def handler(event, context):
         code_pipeline.put_job_failure_result(jobId=job_id, failureDetails={'message': e, 'type': 'JobFailed'})
 
     finally:
-      shutil.rmtree(source_dir)
-      shutil.rmtree(site_dir)
+        if source_dir != None:
+            shutil.rmtree(source_dir)
+        if site_dir != None:
+            shutil.rmtree(site_dir)
 
     return "complete"
 
